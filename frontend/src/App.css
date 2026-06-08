@@ -1,0 +1,608 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   LIGHT MODE
+=========================== */
+
+.app {
+  background: linear-gradient(
+    135deg,
+    #eef4ff,
+    #f8fbff
+  );
+  color: #1e293b;
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+
+.app.dark {
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #111827
+  );
+  color: white;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 5px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4,
+    #8b5cf6
+  );
+
+  background-size: 200% 200%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: gradientFlow 6s ease infinite;
+}
+
+.header p {
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.app.dark .header p {
+  color: #cbd5e1;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: left center;
+  }
+
+  50% {
+    background-position: right center;
+  }
+
+  100% {
+    background-position: left center;
+  }
+}
+
+/* ===========================
+   MODERN BUTTONS
+=========================== */
+
+.upload-btn,
+.ask-btn,
+.theme-btn {
+
+  border: none;
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  padding: 14px 26px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6,
+    #06b6d4
+  );
+
+  background-size: 200% 200%;
+
+  box-shadow:
+    0 10px 25px rgba(
+      37,
+      99,
+      235,
+      0.35
+    );
+
+  transition: all 0.3s ease;
+
+  animation:
+    buttonGradient 6s ease infinite;
+}
+
+.theme-btn {
+  min-width: 150px;
+}
+
+@keyframes buttonGradient {
+
+  0% {
+    background-position: left center;
+  }
+
+  50% {
+    background-position: right center;
+  }
+
+  100% {
+    background-position: left center;
+  }
+}
+
+.upload-btn:hover,
+.ask-btn:hover,
+.theme-btn:hover {
+
+  transform:
+    translateY(-4px)
+    scale(1.03);
+
+  box-shadow:
+    0 18px 35px rgba(
+      37,
+      99,
+      235,
+      0.5
+    );
+}
+
+.upload-btn:active,
+.ask-btn:active,
+.theme-btn:active {
+  transform: scale(0.96);
+}
+
+/* ===========================
+   FILE PICKER
+=========================== */
+
+.file-upload {
+
+  display: inline-block;
+
+  padding: 14px 24px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #6366f1
+  );
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-right: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.file-upload:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(
+      99,
+      102,
+      241,
+      0.45
+    );
+}
+
+.file-upload input {
+  display: none;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+.card {
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.85
+  );
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 12px 32px rgba(
+      15,
+      23,
+      42,
+      0.08
+    );
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.app.dark .card {
+
+  background: rgba(
+    30,
+    41,
+    59,
+    0.95
+  );
+
+  border: 1px solid #334155;
+
+  box-shadow:
+    0 12px 32px rgba(
+      0,
+      0,
+      0,
+      0.4
+    );
+}
+
+/* ===========================
+   SECTION TITLES
+=========================== */
+
+.card h2 {
+
+  margin-bottom: 18px;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.app.dark .card h2 {
+  color: #60a5fa;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.card p,
+.card span,
+.card pre {
+  line-height: 1.7;
+}
+
+.app.dark .card p,
+.app.dark .card span,
+.app.dark .card pre {
+  color: white;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+input[type="text"] {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: 1px solid #cbd5e1;
+
+  font-size: 15px;
+
+  margin-bottom: 15px;
+}
+
+.app.dark input[type="text"] {
+
+  background: #334155;
+
+  color: white;
+
+  border: 1px solid #475569;
+}
+
+input[type="text"]:focus {
+
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 4px rgba(
+      37,
+      99,
+      235,
+      0.15
+    );
+}
+
+/* ===========================
+   CHAT ANSWER
+=========================== */
+
+.answer-box {
+
+  margin-top: 20px;
+
+  padding: 22px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #eff6ff,
+    #dbeafe
+  );
+
+  border-left: 5px solid #2563eb;
+}
+
+.answer-box h3 {
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.answer-box p {
+  color: #334155;
+}
+
+.app.dark .answer-box {
+
+  background: #334155;
+
+  border-left: 5px solid #3b82f6;
+}
+
+.app.dark .answer-box h3,
+.app.dark .answer-box p {
+  color: white;
+}
+
+/* ===========================
+   ENTITY CHIPS
+=========================== */
+
+.chip {
+
+  display: inline-block;
+
+  margin: 5px;
+
+  padding: 8px 15px;
+
+  border-radius: 999px;
+
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  font-weight: 600;
+}
+
+.app.dark .chip {
+
+  background: #1e40af;
+
+  color: white;
+}
+
+/* ===========================
+   SENTIMENT BADGES
+=========================== */
+
+.badge {
+
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  color: white;
+}
+
+.positive {
+  background: #22c55e;
+}
+
+.negative {
+  background: #ef4444;
+}
+
+.neutral {
+  background: #f59e0b;
+}
+
+.sentiment-score {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ===========================
+   ACTION ITEMS
+=========================== */
+
+pre {
+  white-space: pre-wrap;
+  font-size: 15px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 900px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .theme-btn {
+    width: 100%;
+  }
+}
+
+/* ===========================
+   UPLOAD CONTROLS
+=========================== */
+
+.upload-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 24px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #6366f1
+  );
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.file-upload:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(
+      99,
+      102,
+      241,
+      0.4
+    );
+}
+
+.file-upload input {
+  display: none;
+}
+
+.selected-file {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.app.dark .selected-file {
+  color: #cbd5e1;
+}
+
+/* Better Upload Button */
+
+.upload-btn {
+  min-width: 220px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .upload-controls {
+    flex-direction: column;
+  }
+
+  .upload-btn,
+  .file-upload {
+    width: 100%;
+    justify-content: center;
+  }
+}
